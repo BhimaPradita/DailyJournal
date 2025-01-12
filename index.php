@@ -7,8 +7,20 @@ include "koneksi.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Journal bg</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    /> -->
     <style>
         .card-article {
             background-color: #858585;
@@ -34,22 +46,30 @@ include "koneksi.php";
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">BAMBUCOI</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top p-3 bg-dark">
+        <div class="container">
+        <a class="navbar-brand text-light" href="#">BAMBUCOI</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="article.html">Article</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="login.php">Login</a></li>
-                </ul>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#article">Artikel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#galery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="login.php">Login</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
     
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -136,42 +156,232 @@ include "koneksi.php";
         <button class="btn btn-primary">Selanjutnya</button>
     </div>
 
-    <!-- article begin -->
-<section id="article" class="text-center p-5">
-  <div class="container">
-    <h1 class="fw-bold display-4 pb-3">article</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-      <?php
-      $sql = "SELECT * FROM article ORDER BY tanggal DESC";
-      $hasil = $conn->query($sql); 
-
-      while($row = $hasil->fetch_assoc()){
-      ?>
-        <div class="col">
-          <div class="card h-100">
-            <img src="AllAssets/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title"><?= $row["judul"]?></h5>
-              <p class="card-text">
-                <?= $row["isi"]?>
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-body-secondary">
-                <?= $row["tanggal"]?>
-              </small>
-            </div>
-          </div>
+    <section id="profil" class="p-5 bg-primary-subtle" >
+        <div class="text-center fw-bold display-4 pb-3 p-5">
+        <h1><b>Profil Mahasiswa</b></h1>
+        <br>
         </div>
-        <?php
-      }
-      ?> 
-    </div>
-  </div>
-</section>
-<!-- article end -->
+        <div class="container row row-cols-1 row-cols-md-1 g-4 justify-content-center">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-6 d-flex justify-content-center text-center">
+            <img
+                src="AllAssets/bambu5.jpg"
+                class="img-fluid"
+                style="height: 280px; width: 280px; border-radius: 100%;"
+                alt="Hero Image"
+            />
+            </div>
+            <div class="card text-bg-light mb-4 text-center" style="max-width: 550px;">
+            <div class="card-body">
+                <h2 class="card-title">Bhima Pradita Hidayat</h2>
+                <h2class="card-text">Mahasiswa Teknik Informatika</h2>
+                <br>
+                <br>
+                <h6 class="card-text"><b>NIM</b>    : A11.2023.14966</h6>
+                <h6 class="card-text"><b>Program Studi</b>  : Teknik Informatika</h6>
+                <h6 class="card-text"><b>Email</b>  : 1112314966@mhs.dinus.ac.id</h6>
+                <h6 class="card-text"><b>Telepon</b> : 08123456789</h6>
+                <h6 class="card-text"><b>Alamat</b> : Jepara, Jl. Raya Aspal</h6>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
 
+    <section id="Schedule" class="text-center p-5">
+    <div class="container">
+        
+        <h1 class="fw-bold display-4 pb-3">Jadwal Kuliah & Mahasiswa</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
     
+        <div class="col">
+            <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Senin</div>
+                <div class="card-body text-bg-light">
+                <h7 class="card-title"><b>09:00-10:30</b></h7>
+                <h6 class="card-text">Basis Data</h6>
+                <h6 class="card-text">Ruang H.3.4</h6>
+                <br>
+                <h7 class="card-title"><b>13:00-15:30</b></h7>
+                <h6 class="card-text">Dasar Pemrograman</h6>
+                <h6 class="card-text">Ruang H.3.1</h6>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Selasa</div>
+                <div class="card-body text-bg-light">
+                <h7 class="card-title"><b>09:00-10:30</b></h7>
+                <h6 class="card-text">Basis Data</h6>
+                <h6 class="card-text">Ruang H.3.4</h6>
+                <br>
+                <h7 class="card-title"><b>13:00-15:30</b></h7>
+                <h6 class="card-text">Dasar Pemrograman</h6>
+                <h6 class="card-text">Ruang H.3.1</h6>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col">
+            <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header ">Rabu</div>
+                <div class="card-body text-bg-light">
+                <h7 class="card-title"><b>09:00-10:30</b></h7>
+                <h6 class="card-text">Basis Data</h6>
+                <h6 class="card-text">Ruang H.3.4</h6>
+                <br>
+                <h7 class="card-title"><b>13:00-15:30</b></h7>
+                <h6 class="card-text">Dasar Pemrograman</h6>
+                <h6 class="card-text">Ruang H.3.1</h6>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col">
+            <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header">Kamis</div>
+                <div class="card-body text-bg-light">
+                <h7 class="card-title"><b>09:00-10:30</b></h7>
+                <h6 class="card-text">Basis Data</h6>
+                <h6 class="card-text">Ruang H.3.4</h6>
+                <br>
+                <h7 class="card-title"><b>13:00-15:30</b></h7>
+                <h6 class="card-text">Dasar Pemrograman</h6>
+                <h6 class="card-text">Ruang H.3.1</h6>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col">
+            <div class="card text-bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">Jumat</div>
+                <div class="card-body text-bg-light">
+                <h7 class="card-title"><b>09:00-10:30</b></h7>
+                <h6 class="card-text">Basis Data</h6>
+                <h6 class="card-text">Ruang H.3.4</h6>
+                <br>
+                <h7 class="card-title"><b>13:00-15:30</b></h7>
+                <h6 class="card-text">Dasar Pemrograman</h6>
+                <h6 class="card-text">Ruang H.3.1</h6>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col">
+            <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Sabtu</div>
+                <div class="card-body text-bg-light">
+                <h7 class="card-title"><b>09:00-10:30</b></h7>
+                <h6 class="card-text">Basis Data</h6>
+                <h6 class="card-text">Ruang H.3.4</h6>
+                <br>
+                <h7 class="card-title"><b>13:00-15:30</b></h7>
+                <h6 class="card-text">Dasar Pemrograman</h6>
+                <h6 class="card-text">Ruang H.3.1</h6>
+                </div>
+            </div>
+        </div>
+  
+        <div class="col">
+            <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Minggu</div>
+                <div class="card-body text-bg-light">
+                <h6 class="card-text">Tidak ada jadwal</h6>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+    </section>
+
+    <!-- article begin -->
+    <section id="article" class="text-center p-5">
+    <div class="container">
+        <h1 class="fw-bold display-4 pb-3">Article</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <?php
+        $sql = "SELECT * FROM article ORDER BY tanggal DESC";
+        $hasil = $conn->query($sql); 
+
+        while($row = $hasil->fetch_assoc()){
+        ?>
+            <div class="col">
+            <div class="card h-100">
+                <img src="AllAssets/<?= $row["gambar"]?>" class="card-img-top" alt="..." />
+                <div class="card-body">
+                <h5 class="card-title"><?= $row["judul"]?></h5>
+                <p class="card-text">
+                    <?= $row["isi"]?>
+                </p>
+                </div>
+                <div class="card-footer">
+                <small class="text-body-secondary">
+                    <?= $row["tanggal"]?>
+                </small>
+                </div>
+            </div>
+            </div>
+            <?php
+        }
+        ?> 
+        </div>
+    </div>
+    </section>
+    <!-- article end -->
+
+    <!-- Galery -->
+    <section id="galery" class="bg-warning-subtle pb-5">
+        <div class="container">
+            <h1 class="fw-bold text-center p-3">Gallery</h1>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <?php
+                    $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+                    $hasil = $conn->query($sql); 
+
+                    // Variabel untuk menentukan item pertama
+                    $isActive = true;
+
+                    while ($row = $hasil->fetch_assoc()) {
+                    ?>
+                    <div class="carousel-item <?= $isActive ? 'active' : '' ?>">
+                        <img src="AllAssets/<?= $row['gambar'] ?>" class="d-block w-100" alt="Gallery Image" />
+                    </div>
+                    <?php
+                        $isActive = false; // Setelah item pertama, set active ke false
+                    }
+                    ?>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4 align-self-start">
