@@ -78,9 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="home.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="article.html">Article</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="index.php#article">Article</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="index.php#galery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link text-light" href="#">Login</a></li>
                 </ul>
             </div>
