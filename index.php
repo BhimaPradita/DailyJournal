@@ -7,9 +7,9 @@ include "koneksi.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Journal bg</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -42,6 +42,9 @@ include "koneksi.php";
         }
         .card-article .card-title {
             color: #ffffff;
+        }
+        .navbar {
+        background-color: #000 !important; /* Warna hitam */
         }
     </style>
 </head>
@@ -149,11 +152,6 @@ include "koneksi.php";
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="d-flex justify-content-center my-4">
-        <button class="btn btn-primary">Selanjutnya</button>
     </div>
 
     <section id="profil" class="p-5 bg-primary-subtle" >
@@ -303,7 +301,7 @@ include "koneksi.php";
     </section>
 
     <!-- article begin -->
-    <section id="article" class="text-center p-5">
+    <section id="article" class="text-center">
     <div class="container">
         <h1 class="fw-bold display-4 pb-3">Article</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
@@ -338,7 +336,7 @@ include "koneksi.php";
     <!-- article end -->
 
     <!-- Galery -->
-    <section id="galery" class="bg-warning-subtle pb-5">
+    <section id="galery" class="pb-5">
         <div class="container">
             <h1 class="fw-bold text-center p-3">Gallery</h1>
             <div id="carouselExample" class="carousel slide">
@@ -382,7 +380,7 @@ include "koneksi.php";
         </div>
     </section>
 
-    <div class="container my-5">
+    <div class="container p-5 bg-secondary-subtle">
         <div class="row">
             <div class="col-md-4 align-self-start">
                 <h1>BAMBUCOI</h1>
